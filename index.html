@@ -45,6 +45,7 @@
 
   <!-- Hero -->
   <section class="hero" id="hero">
+    <canvas id="heroCanvas" class="hero-canvas"></canvas>
     <div class="hero-bg">
       <div class="hero-gradient"></div>
       <div class="hero-grid"></div>
@@ -56,17 +57,17 @@
         <p class="hero-subtitle fade-in">One platform. Many AI companies. Serving the next billion users.</p>
         <div class="hero-stats fade-in">
           <div class="hero-stat">
-            <span class="hero-stat-value">41,500+</span>
+            <span class="hero-stat-value counter" data-target="41500" data-suffix="+" data-separator=",">41,500+</span>
             <span class="hero-stat-label">Users</span>
           </div>
           <div class="hero-stat-divider"></div>
           <div class="hero-stat">
-            <span class="hero-stat-value">4</span>
+            <span class="hero-stat-value counter" data-target="4">4</span>
             <span class="hero-stat-label">OpCos Live</span>
           </div>
           <div class="hero-stat-divider"></div>
           <div class="hero-stat">
-            <span class="hero-stat-value">~$1M</span>
+            <span class="hero-stat-value counter" data-target="1" data-prefix="~$" data-suffix="M">~$1M</span>
             <span class="hero-stat-label">ARR</span>
           </div>
         </div>
@@ -77,6 +78,9 @@
       </div>
     </div>
   </section>
+
+  <!-- Section Divider -->
+  <div class="section-divider"></div>
 
   <!-- About -->
   <section class="section" id="about">
@@ -113,6 +117,9 @@
     </div>
   </section>
 
+  <!-- Section Divider -->
+  <div class="section-divider"></div>
+
   <!-- Problem -->
   <section class="section section-dark" id="problem">
     <div class="container">
@@ -123,24 +130,27 @@
       </div>
       <div class="problem-grid">
         <div class="problem-card fade-in">
-          <span class="problem-stat">6.8B</span>
+          <span class="problem-stat counter" data-target="6.8" data-suffix="B" data-decimals="1">6.8B</span>
           <p class="problem-label">People without meaningful AI access</p>
         </div>
         <div class="problem-card fade-in">
-          <span class="problem-stat">$20/mo</span>
+          <span class="problem-stat counter" data-target="20" data-prefix="$" data-suffix="/mo">$20/mo</span>
           <p class="problem-label">ChatGPT Plus cost vs $375 avg monthly salary in target markets</p>
         </div>
         <div class="problem-card fade-in">
-          <span class="problem-stat">10.6pp</span>
+          <span class="problem-stat counter" data-target="10.6" data-suffix="pp" data-decimals="1">10.6pp</span>
           <p class="problem-label">AI adoption gap between high and low-income countries</p>
         </div>
         <div class="problem-card fade-in">
-          <span class="problem-stat">&lt;1%</span>
+          <span class="problem-stat counter" data-target="1" data-prefix="<" data-suffix="%">&lt;1%</span>
           <p class="problem-label">Share of global AI traffic from low-income economies</p>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Section Divider -->
+  <div class="section-divider"></div>
 
   <!-- How It Works -->
   <section class="section" id="how-it-works">
@@ -155,22 +165,25 @@
           <div class="flow-layer-label">End Users</div>
           <div class="flow-layer-desc">The next billion AI users in emerging markets</div>
         </div>
-        <div class="flow-arrow">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 4v16m0 0l-6-6m6 6l6-6" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="flow-arrow-animated">
+          <div class="flow-pulse-line"></div>
+          <div class="flow-pulse-dot"></div>
         </div>
         <div class="flow-layer flow-layer-mid">
           <div class="flow-layer-label">OpCos <span class="flow-badge">Keep 85%</span></div>
           <div class="flow-layer-desc">Independent AI companies building products on Allting</div>
         </div>
-        <div class="flow-arrow">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 4v16m0 0l-6-6m6 6l6-6" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="flow-arrow-animated">
+          <div class="flow-pulse-line"></div>
+          <div class="flow-pulse-dot"></div>
         </div>
         <div class="flow-layer flow-layer-infra">
           <div class="flow-layer-label">Allting InfraCo <span class="flow-badge accent">Takes 15%</span></div>
           <div class="flow-layer-desc">Shared platform: billing, auth, APIs, infra, compliance</div>
         </div>
-        <div class="flow-arrow">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 4v16m0 0l-6-6m6 6l6-6" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div class="flow-arrow-animated">
+          <div class="flow-pulse-line"></div>
+          <div class="flow-pulse-dot"></div>
         </div>
         <div class="flow-layer flow-layer-bottom">
           <div class="flow-layer-label">AI Providers</div>
@@ -180,6 +193,9 @@
       <p class="flow-callout fade-in">"Every new OpCo increases revenue with almost no increase in cost."</p>
     </div>
   </section>
+
+  <!-- Section Divider -->
+  <div class="section-divider"></div>
 
   <!-- Market -->
   <section class="section section-dark" id="market">
@@ -218,6 +234,9 @@
     </div>
   </section>
 
+  <!-- Section Divider -->
+  <div class="section-divider"></div>
+
   <!-- Business Model -->
   <section class="section" id="model">
     <div class="container">
@@ -242,29 +261,43 @@
         </div>
         <div class="flywheel fade-in">
           <h3 class="flywheel-title">The Flywheel</h3>
-          <div class="flywheel-visual">
-            <div class="flywheel-step">More OpCos</div>
-            <div class="flywheel-connector">
-              <svg width="40" height="20" viewBox="0 0 40 20"><path d="M2 10h36m0 0l-6-6m6 6l-6 6" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="flywheel-circular" id="flywheelCircular">
+            <div class="flywheel-ring">
+              <svg class="flywheel-ring-svg" viewBox="0 0 300 300">
+                <!-- Outer track -->
+                <circle cx="150" cy="150" r="130" fill="none" stroke="rgba(59,130,246,0.1)" stroke-width="2"/>
+                <!-- Animated rotating arrow arc -->
+                <circle cx="150" cy="150" r="130" fill="none" stroke="rgba(59,130,246,0.4)" stroke-width="3" stroke-dasharray="120 700" stroke-linecap="round" class="flywheel-spin-arc"/>
+                <!-- Arrow dots moving along the circle -->
+                <circle r="4" fill="#3B82F6" class="flywheel-dot flywheel-dot-1"/>
+                <circle r="3" fill="#3B82F6" opacity="0.6" class="flywheel-dot flywheel-dot-2"/>
+                <circle r="2" fill="#3B82F6" opacity="0.3" class="flywheel-dot flywheel-dot-3"/>
+              </svg>
             </div>
-            <div class="flywheel-step">More Volume</div>
-            <div class="flywheel-connector">
-              <svg width="40" height="20" viewBox="0 0 40 20"><path d="M2 10h36m0 0l-6-6m6 6l-6 6" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="flywheel-node flywheel-node-0" data-label="More OpCos">
+              <span class="flywheel-node-icon">+</span>
+              <span class="flywheel-node-text">More OpCos</span>
             </div>
-            <div class="flywheel-step">Lower Costs</div>
-            <div class="flywheel-connector">
-              <svg width="40" height="20" viewBox="0 0 40 20"><path d="M2 10h36m0 0l-6-6m6 6l-6 6" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="flywheel-node flywheel-node-1" data-label="More Volume">
+              <span class="flywheel-node-icon">&uarr;</span>
+              <span class="flywheel-node-text">More Volume</span>
             </div>
-            <div class="flywheel-step">Better Margins</div>
-            <div class="flywheel-connector flywheel-return">
-              <svg width="40" height="20" viewBox="0 0 40 20"><path d="M2 10h36m0 0l-6-6m6 6l-6 6" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div class="flywheel-node flywheel-node-2" data-label="Lower Costs">
+              <span class="flywheel-node-icon">&darr;</span>
+              <span class="flywheel-node-text">Lower Costs</span>
             </div>
-            <div class="flywheel-step flywheel-step-highlight">More OpCos</div>
+            <div class="flywheel-node flywheel-node-3" data-label="Better Margins">
+              <span class="flywheel-node-icon">%</span>
+              <span class="flywheel-node-text">Better Margins</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Section Divider -->
+  <div class="section-divider"></div>
 
   <!-- Traction -->
   <section class="section section-dark" id="traction">
@@ -275,19 +308,19 @@
       </div>
       <div class="traction-stats fade-in">
         <div class="traction-stat">
-          <span class="traction-stat-value">41,500+</span>
+          <span class="traction-stat-value counter" data-target="41500" data-suffix="+" data-separator=",">41,500+</span>
           <span class="traction-stat-label">Platform Users</span>
         </div>
         <div class="traction-stat">
-          <span class="traction-stat-value">4</span>
+          <span class="traction-stat-value counter" data-target="4">4</span>
           <span class="traction-stat-label">OpCos Live</span>
         </div>
         <div class="traction-stat">
-          <span class="traction-stat-value">~$1M</span>
+          <span class="traction-stat-value counter" data-target="1" data-prefix="~$" data-suffix="M">~$1M</span>
           <span class="traction-stat-label">ARR</span>
         </div>
         <div class="traction-stat">
-          <span class="traction-stat-value">~0</span>
+          <span class="traction-stat-value counter" data-target="0" data-prefix="~">~0</span>
           <span class="traction-stat-label">Marginal Cost</span>
         </div>
       </div>
@@ -349,6 +382,9 @@
     </div>
   </section>
 
+  <!-- Section Divider -->
+  <div class="section-divider"></div>
+
   <!-- Team -->
   <section class="section" id="team">
     <div class="container">
@@ -378,6 +414,9 @@
       </div>
     </div>
   </section>
+
+  <!-- Section Divider -->
+  <div class="section-divider"></div>
 
   <!-- Roadmap -->
   <section class="section section-dark" id="roadmap">

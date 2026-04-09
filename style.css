@@ -55,6 +55,10 @@ a {
 ul { list-style: none; }
 
 /* --- Animations --- */
+.counter {
+  display: inline-block;
+}
+
 .fade-in {
   opacity: 0;
   transform: translateY(30px);
@@ -171,6 +175,26 @@ ul { list-style: none; }
 }
 
 /* ============================================
+   Section Dividers
+   ============================================ */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(59,130,246,0.3) 30%, rgba(59,130,246,0.5) 50%, rgba(59,130,246,0.3) 70%, transparent);
+  position: relative;
+}
+
+.section-divider::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 0;
+  right: 0;
+  height: 17px;
+  background: linear-gradient(90deg, transparent, rgba(59,130,246,0.06) 30%, rgba(59,130,246,0.1) 50%, rgba(59,130,246,0.06) 70%, transparent);
+  filter: blur(4px);
+}
+
+/* ============================================
    Hero Section
    ============================================ */
 .hero {
@@ -180,6 +204,16 @@ ul { list-style: none; }
   align-items: center;
   padding: 120px 0 80px;
   overflow: hidden;
+}
+
+.hero-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
 }
 
 .hero-bg {
@@ -538,6 +572,47 @@ ul { list-style: none; }
   opacity: 0.5;
 }
 
+/* Animated flow arrows */
+.flow-arrow-animated {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4px 0;
+  position: relative;
+  height: 40px;
+}
+
+.flow-pulse-line {
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(59,130,246,0.1), rgba(59,130,246,0.4), rgba(59,130,246,0.1));
+}
+
+.flow-pulse-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 12px rgba(59,130,246,0.6);
+  animation: flowPulseDown 2s ease-in-out infinite;
+}
+
+.flow-arrow-animated:nth-of-type(2) .flow-pulse-dot {
+  animation-delay: 0.4s;
+}
+
+.flow-arrow-animated:nth-of-type(3) .flow-pulse-dot {
+  animation-delay: 0.8s;
+}
+
+@keyframes flowPulseDown {
+  0% { top: 0; opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { top: calc(100% - 8px); opacity: 0; }
+}
+
 .flow-callout {
   text-align: center;
   margin-top: 48px;
@@ -668,35 +743,89 @@ ul { list-style: none; }
   text-align: center;
 }
 
-.flywheel-visual {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+/* Circular flywheel */
+.flywheel-circular {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
 }
 
-.flywheel-step {
-  background: rgba(59,130,246,0.1);
-  border: 1px solid rgba(59,130,246,0.2);
-  border-radius: 8px;
-  padding: 12px 20px;
-  font-size: 0.875rem;
+.flywheel-ring {
+  position: absolute;
+  inset: 0;
+}
+
+.flywheel-ring-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.flywheel-spin-arc {
+  transform-origin: 150px 150px;
+  animation: flywheelSpin 6s linear infinite;
+}
+
+.flywheel-dot {
+  animation: flywheelDotMove 6s linear infinite;
+}
+
+.flywheel-dot-1 { animation-delay: 0s; }
+.flywheel-dot-2 { animation-delay: -0.3s; }
+.flywheel-dot-3 { animation-delay: -0.6s; }
+
+@keyframes flywheelSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes flywheelDotMove {
+  from { transform: rotate(0deg) translate(130px) rotate(0deg); cx: 150; cy: 150; }
+  to { transform: rotate(360deg) translate(130px) rotate(-360deg); cx: 150; cy: 150; }
+}
+
+.flywheel-node {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  transform: translate(-50%, -50%);
+}
+
+.flywheel-node-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(59,130,246,0.15);
+  border: 2px solid rgba(59,130,246,0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--blue-light);
+  transition: all 0.3s ease;
+}
+
+.flywheel-node:hover .flywheel-node-icon {
+  background: rgba(59,130,246,0.3);
+  border-color: var(--blue);
+  box-shadow: 0 0 20px rgba(59,130,246,0.3);
+}
+
+.flywheel-node-text {
+  font-size: 0.75rem;
   font-weight: 600;
-  color: var(--gray-200);
+  color: var(--gray-300);
   white-space: nowrap;
 }
 
-.flywheel-step-highlight {
-  background: rgba(59,130,246,0.2);
-  border-color: var(--blue);
-  color: var(--white);
-}
-
-.flywheel-connector {
-  display: flex;
-  align-items: center;
-}
+/* Positions: top, right, bottom, left */
+.flywheel-node-0 { top: 4%; left: 50%; }
+.flywheel-node-1 { top: 50%; left: 98%; }
+.flywheel-node-2 { top: 96%; left: 50%; }
+.flywheel-node-3 { top: 50%; left: 2%; }
 
 /* ============================================
    Traction Section
@@ -1213,12 +1342,19 @@ ul { list-style: none; }
     margin: 0 auto;
   }
 
-  .flywheel-visual {
-    flex-direction: column;
+  .flywheel-circular {
+    width: 260px;
+    height: 260px;
   }
 
-  .flywheel-connector svg {
-    transform: rotate(90deg);
+  .flywheel-node-text {
+    font-size: 0.6875rem;
+  }
+
+  .flywheel-node-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
   }
 
   .footer-content {
