@@ -24,17 +24,46 @@
   <meta name="twitter:description" content="One platform. Many AI companies. Serving the next billion users. Allting is the shared infrastructure layer for AI in emerging markets.">
   <meta name="twitter:image" content="https://allting.ai/og-image.png">
 
+  <!-- SEO -->
+  <link rel="canonical" href="https://allting.ai">
+  <meta name="theme-color" content="#0F172A">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Allting",
+    "url": "https://allting.ai",
+    "logo": "https://allting.ai/favicon.svg",
+    "description": "The shared infrastructure layer for AI in emerging markets. One platform. Many AI companies. Serving the next billion users.",
+    "email": "info@excom.ai",
+    "foundingDate": "2022",
+    "sameAs": [],
+    "knowsAbout": ["Artificial Intelligence", "AI Infrastructure", "Emerging Markets", "Platform Economics"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Allting",
+    "url": "https://allting.ai"
+  }
+  </script>
 </head>
 <body>
 
   <!-- Navigation -->
-  <nav class="nav" id="nav">
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="#" class="nav-logo">
+      <a href="#" class="nav-logo" aria-label="Allting home">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 50" width="190" height="43" class="nav-logo-svg">
           <!-- Triangle nodes + center hub (no spokes) -->
           <line x1="20" y1="6" x2="6" y2="38" stroke="#3B82F6" stroke-width="1.5" opacity="0.6"/>
@@ -63,8 +92,8 @@
   </nav>
 
   <!-- Hero -->
-  <section class="hero" id="hero">
-    <canvas id="heroCanvas" class="hero-canvas"></canvas>
+  <section class="hero" id="hero" role="banner" aria-label="Hero">
+    <canvas id="heroCanvas" class="hero-canvas" aria-hidden="true"></canvas>
     <div class="hero-bg">
       <div class="hero-gradient"></div>
       <div class="hero-grid"></div>
@@ -102,7 +131,7 @@
   <div class="section-divider"></div>
 
   <!-- About -->
-  <section class="section" id="about">
+  <section class="section" id="about" aria-label="About Allting">
     <div class="container">
       <div class="section-header fade-in">
         <p class="section-label">About Allting</p>
@@ -140,7 +169,7 @@
   <div class="section-divider"></div>
 
   <!-- Problem -->
-  <section class="section section-dark" id="problem">
+  <section class="section section-dark" id="problem" aria-label="The Problem">
     <div class="container">
       <div class="section-header fade-in">
         <p class="section-label">The Problem</p>
@@ -172,7 +201,7 @@
   <div class="section-divider"></div>
 
   <!-- How It Works -->
-  <section class="section" id="how-it-works">
+  <section class="section" id="how-it-works" aria-label="How It Works">
     <div class="container">
       <div class="section-header fade-in">
         <p class="section-label">How It Works</p>
@@ -217,7 +246,7 @@
   <div class="section-divider"></div>
 
   <!-- Market -->
-  <section class="section section-dark" id="market">
+  <section class="section section-dark" id="market" aria-label="Market Opportunity">
     <div class="container">
       <div class="section-header fade-in">
         <p class="section-label">Market Opportunity</p>
@@ -257,7 +286,7 @@
   <div class="section-divider"></div>
 
   <!-- Business Model -->
-  <section class="section" id="model">
+  <section class="section" id="model" aria-label="Business Model">
     <div class="container">
       <div class="section-header fade-in">
         <p class="section-label">Business Model</p>
@@ -319,7 +348,7 @@
   <div class="section-divider"></div>
 
   <!-- Traction -->
-  <section class="section section-dark" id="traction">
+  <section class="section section-dark" id="traction" aria-label="Traction">
     <div class="container">
       <div class="section-header fade-in">
         <p class="section-label">Traction</p>
@@ -405,7 +434,7 @@
   <div class="section-divider"></div>
 
   <!-- Team -->
-  <section class="section" id="team">
+  <section class="section" id="team" aria-label="Team">
     <div class="container">
       <div class="section-header fade-in">
         <p class="section-label">Team</p>
@@ -438,7 +467,7 @@
   <div class="section-divider"></div>
 
   <!-- Roadmap -->
-  <section class="section section-dark" id="roadmap">
+  <section class="section section-dark" id="roadmap" aria-label="Roadmap">
     <div class="container">
       <div class="section-header fade-in">
         <p class="section-label">Roadmap</p>
@@ -486,7 +515,7 @@
   </section>
 
   <!-- Contact / Footer -->
-  <footer class="footer" id="contact">
+  <footer class="footer" id="contact" role="contentinfo" aria-label="Contact and footer">
     <div class="container">
       <div class="footer-content fade-in">
         <div class="footer-main">
@@ -508,6 +537,6 @@
     </div>
   </footer>
 
-  <script src="main.js"></script>
+  <script src="main.js" defer></script>
 </body>
 </html>
