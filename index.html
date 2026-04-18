@@ -63,9 +63,8 @@
   <!-- Navigation -->
   <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
-      <a href="#" class="nav-logo" aria-label="Allting home">
+      <a href="/" class="nav-logo" aria-label="Allting home">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 50" width="190" height="43" class="nav-logo-svg">
-          <!-- Triangle nodes + center hub (no spokes) -->
           <line x1="20" y1="6" x2="6" y2="38" stroke="#3B82F6" stroke-width="1.5" opacity="0.6"/>
           <line x1="20" y1="6" x2="34" y2="38" stroke="#3B82F6" stroke-width="1.5" opacity="0.6"/>
           <line x1="6" y1="38" x2="34" y2="38" stroke="#3B82F6" stroke-width="1.5" opacity="0.6"/>
@@ -80,12 +79,9 @@
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#about">About</a></li>
-        <li><a href="#problem">Problem</a></li>
-        <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#market">Market</a></li>
-        <li><a href="#traction">Traction</a></li>
-        <li><a href="#team">Team</a></li>
+        <li><a href="/" class="nav-active">Platform</a></li>
+        <li><a href="invest.html">Fund</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="#contact" class="nav-cta">Contact</a></li>
       </ul>
     </div>
@@ -100,7 +96,6 @@
     </div>
     <div class="container">
       <div class="hero-content">
-        <p class="hero-label fade-in">Investor Overview</p>
         <h1 class="hero-title fade-in">The Shared Infrastructure<br>Layer for AI</h1>
         <p class="hero-subtitle fade-in">One platform. Many AI companies. Serving the next billion users.</p>
         <div class="hero-stats fade-in">
@@ -120,8 +115,8 @@
           </div>
         </div>
         <div class="hero-actions fade-in">
-          <a href="#about" class="btn btn-primary">Learn More</a>
-          <a href="#contact" class="btn btn-outline">Get in Touch</a>
+          <a href="#what-we-do" class="btn btn-primary">Explore the Platform</a>
+          <a href="invest.html" class="btn btn-outline">Investor Information</a>
         </div>
       </div>
     </div>
@@ -130,12 +125,13 @@
   <!-- Section Divider -->
   <div class="section-divider"></div>
 
-  <!-- About -->
-  <section class="section" id="about" aria-label="About Allting">
+  <!-- What We Do -->
+  <section class="section" id="what-we-do" aria-label="What We Do">
     <div class="container">
       <div class="section-header fade-in">
-        <p class="section-label">About Allting</p>
+        <p class="section-label">What We Do</p>
         <h2 class="section-title">The TowerCo for AI</h2>
+        <p class="section-desc">We don't build AI products. We build the platform that lets others build and sell them.</p>
       </div>
       <div class="about-grid">
         <div class="about-analogy fade-in">
@@ -149,49 +145,13 @@
         </div>
         <div class="about-details fade-in">
           <div class="about-card">
-            <h3>What We Do</h3>
+            <h3>Shared Infrastructure</h3>
             <p>Allting builds and operates the shared infrastructure layer that enables AI companies to launch and scale products in emerging markets -- without building the underlying platform from scratch.</p>
           </div>
           <div class="about-card">
-            <h3>How We Earn</h3>
-            <p>We take a 15% revenue share from every operating company (OpCo) on our platform. We don't build AI products. We enable others to build and sell them.</p>
+            <h3>Platform Economics</h3>
+            <p>We take a 15% revenue share from every operating company on our platform. Every new OpCo increases revenue with almost no increase in cost.</p>
           </div>
-          <div class="about-card">
-            <h3>Why It Works</h3>
-            <p>Every new OpCo increases revenue with almost no increase in cost. The platform is built once. The economics compound with every partner added.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section Divider -->
-  <div class="section-divider"></div>
-
-  <!-- Problem -->
-  <section class="section section-dark" id="problem" aria-label="The Problem">
-    <div class="container">
-      <div class="section-header fade-in">
-        <p class="section-label">The Problem</p>
-        <h2 class="section-title">6.8 Billion People Have Never Used AI</h2>
-        <p class="section-desc">AI adoption is concentrated in high-income markets. The rest of the world is being left behind -- not by choice, but by economics and infrastructure.</p>
-      </div>
-      <div class="problem-grid">
-        <div class="problem-card fade-in">
-          <span class="problem-stat counter" data-target="6.8" data-suffix="B" data-decimals="1">6.8B</span>
-          <p class="problem-label">People without meaningful AI access</p>
-        </div>
-        <div class="problem-card fade-in">
-          <span class="problem-stat counter" data-target="20" data-prefix="$" data-suffix="/mo">$20/mo</span>
-          <p class="problem-label">ChatGPT Plus cost vs $375 avg monthly salary in target markets</p>
-        </div>
-        <div class="problem-card fade-in">
-          <span class="problem-stat counter" data-target="10.6" data-suffix="pp" data-decimals="1">10.6pp</span>
-          <p class="problem-label">AI adoption gap between high and low-income countries</p>
-        </div>
-        <div class="problem-card fade-in">
-          <span class="problem-stat counter" data-target="1" data-prefix="<" data-suffix="%">&lt;1%</span>
-          <p class="problem-label">Share of global AI traffic from low-income economies</p>
         </div>
       </div>
     </div>
@@ -201,12 +161,11 @@
   <div class="section-divider"></div>
 
   <!-- How It Works -->
-  <section class="section" id="how-it-works" aria-label="How It Works">
+  <section class="section section-dark" id="how-it-works" aria-label="How It Works">
     <div class="container">
       <div class="section-header fade-in">
         <p class="section-label">How It Works</p>
         <h2 class="section-title">A Three-Layer Value Chain</h2>
-        <p class="section-desc">A platform model designed for compounding returns. Every new operating company increases revenue with near-zero marginal cost.</p>
       </div>
       <div class="flow-stack fade-in">
         <div class="flow-layer flow-layer-top">
@@ -238,141 +197,19 @@
           <div class="flow-layer-desc">OpenAI, Anthropic, Mistral, and others</div>
         </div>
       </div>
-      <p class="flow-callout fade-in">"Every new OpCo increases revenue with almost no increase in cost."</p>
     </div>
   </section>
 
   <!-- Section Divider -->
   <div class="section-divider"></div>
 
-  <!-- Market -->
-  <section class="section section-dark" id="market" aria-label="Market Opportunity">
+  <!-- OpCos -->
+  <section class="section" id="opcos" aria-label="Operating Companies">
     <div class="container">
       <div class="section-header fade-in">
-        <p class="section-label">Market Opportunity</p>
-        <h2 class="section-title">A $15 Billion Opportunity</h2>
-        <p class="section-desc">Emerging markets represent the largest untapped AI opportunity in the world.</p>
+        <p class="section-label">Operating Companies</p>
+        <h2 class="section-title">Four OpCos Live on the Platform</h2>
       </div>
-      <div class="market-grid">
-        <div class="market-card fade-in">
-          <div class="market-ring">
-            <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="#1E293B" stroke-width="8"/><circle cx="60" cy="60" r="52" fill="none" stroke="#3B82F6" stroke-width="8" stroke-dasharray="327" stroke-dashoffset="0" stroke-linecap="round" transform="rotate(-90 60 60)"/></svg>
-          </div>
-          <span class="market-value">$15B/yr</span>
-          <span class="market-label">TAM</span>
-          <p class="market-desc">1.7B users across LatAm, MENA, SEA, Sub-Saharan Africa</p>
-        </div>
-        <div class="market-card fade-in">
-          <div class="market-ring">
-            <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="#1E293B" stroke-width="8"/><circle cx="60" cy="60" r="52" fill="none" stroke="#3B82F6" stroke-width="8" stroke-dasharray="327" stroke-dashoffset="163" stroke-linecap="round" transform="rotate(-90 60 60)"/></svg>
-          </div>
-          <span class="market-value">$7.5B/yr</span>
-          <span class="market-label">SAM</span>
-          <p class="market-desc">840M addressable users in LatAm + MENA</p>
-        </div>
-        <div class="market-card fade-in">
-          <div class="market-ring">
-            <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="#1E293B" stroke-width="8"/><circle cx="60" cy="60" r="52" fill="none" stroke="#3B82F6" stroke-width="8" stroke-dasharray="327" stroke-dashoffset="310" stroke-linecap="round" transform="rotate(-90 60 60)"/></svg>
-          </div>
-          <span class="market-value">$10-20M</span>
-          <span class="market-label">SOM (Year 3)</span>
-          <p class="market-desc">100+ OpCos generating $10-20M ARR</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section Divider -->
-  <div class="section-divider"></div>
-
-  <!-- Business Model -->
-  <section class="section" id="model" aria-label="Business Model">
-    <div class="container">
-      <div class="section-header fade-in">
-        <p class="section-label">Business Model</p>
-        <h2 class="section-title">Platform Economics That Compound</h2>
-      </div>
-      <div class="model-grid">
-        <div class="model-metrics fade-in">
-          <div class="model-metric">
-            <span class="model-metric-value">15%</span>
-            <span class="model-metric-label">Revenue share per OpCo</span>
-          </div>
-          <div class="model-metric">
-            <span class="model-metric-value">~0</span>
-            <span class="model-metric-label">Marginal cost per new OpCo</span>
-          </div>
-          <div class="model-metric">
-            <span class="model-metric-value">60%+</span>
-            <span class="model-metric-label">Gross margin target at scale</span>
-          </div>
-        </div>
-        <div class="flywheel fade-in">
-          <h3 class="flywheel-title">The Flywheel</h3>
-          <div class="flywheel-circular" id="flywheelCircular">
-            <div class="flywheel-ring">
-              <svg class="flywheel-ring-svg" viewBox="0 0 300 300">
-                <!-- Outer track -->
-                <circle cx="150" cy="150" r="130" fill="none" stroke="rgba(59,130,246,0.1)" stroke-width="2"/>
-                <!-- Animated rotating arrow arc -->
-                <circle cx="150" cy="150" r="130" fill="none" stroke="rgba(59,130,246,0.4)" stroke-width="3" stroke-dasharray="120 700" stroke-linecap="round" class="flywheel-spin-arc"/>
-                <!-- Arrow dots moving along the circle -->
-                <circle r="4" fill="#3B82F6" class="flywheel-dot flywheel-dot-1"/>
-                <circle r="3" fill="#3B82F6" opacity="0.6" class="flywheel-dot flywheel-dot-2"/>
-                <circle r="2" fill="#3B82F6" opacity="0.3" class="flywheel-dot flywheel-dot-3"/>
-              </svg>
-            </div>
-            <div class="flywheel-node flywheel-node-0" data-label="More OpCos">
-              <span class="flywheel-node-icon">+</span>
-              <span class="flywheel-node-text">More OpCos</span>
-            </div>
-            <div class="flywheel-node flywheel-node-1" data-label="More Volume">
-              <span class="flywheel-node-icon">&uarr;</span>
-              <span class="flywheel-node-text">More Volume</span>
-            </div>
-            <div class="flywheel-node flywheel-node-2" data-label="Lower Costs">
-              <span class="flywheel-node-icon">&darr;</span>
-              <span class="flywheel-node-text">Lower Costs</span>
-            </div>
-            <div class="flywheel-node flywheel-node-3" data-label="Better Margins">
-              <span class="flywheel-node-icon">%</span>
-              <span class="flywheel-node-text">Better Margins</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section Divider -->
-  <div class="section-divider"></div>
-
-  <!-- Traction -->
-  <section class="section section-dark" id="traction" aria-label="Traction">
-    <div class="container">
-      <div class="section-header fade-in">
-        <p class="section-label">Traction</p>
-        <h2 class="section-title">Proven, Not Theoretical</h2>
-      </div>
-      <div class="traction-stats fade-in">
-        <div class="traction-stat">
-          <span class="traction-stat-value counter" data-target="41500" data-suffix="+" data-separator=",">41,500+</span>
-          <span class="traction-stat-label">Platform Users</span>
-        </div>
-        <div class="traction-stat">
-          <span class="traction-stat-value counter" data-target="4">4</span>
-          <span class="traction-stat-label">OpCos Live</span>
-        </div>
-        <div class="traction-stat">
-          <span class="traction-stat-value counter" data-target="1" data-prefix="~$" data-suffix="M">~$1M</span>
-          <span class="traction-stat-label">ARR</span>
-        </div>
-        <div class="traction-stat">
-          <span class="traction-stat-value counter" data-target="0" data-prefix="~">~0</span>
-          <span class="traction-stat-label">Marginal Cost</span>
-        </div>
-      </div>
-      <h3 class="traction-subtitle fade-in">Operating Companies</h3>
       <div class="opco-grid">
         <div class="opco-card fade-in">
           <div class="opco-header">
@@ -419,107 +256,6 @@
           </div>
         </div>
       </div>
-      <div class="pipeline fade-in">
-        <h3 class="traction-subtitle">Pipeline</h3>
-        <div class="pipeline-card">
-          <span class="pipeline-badge">Coming Soon</span>
-          <span class="pipeline-name">Birka</span>
-          <span class="pipeline-detail">Mexico &middot; 130M TAM</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section Divider -->
-  <div class="section-divider"></div>
-
-  <!-- Team -->
-  <section class="section" id="team" aria-label="Team">
-    <div class="container">
-      <div class="section-header fade-in">
-        <p class="section-label">Team</p>
-        <h2 class="section-title">Built by Infrastructure Veterans</h2>
-      </div>
-      <div class="team-grid">
-        <div class="team-card fade-in">
-          <a href="https://www.linkedin.com/in/larnholt/" target="_blank" rel="noopener" class="team-linkedin-link">
-            <img src="images/peter.jpg" alt="Peter Larnholt" class="team-photo">
-            <svg class="team-linkedin-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="#3B82F6"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </a>
-          <h3 class="team-name">Peter Larnholt</h3>
-          <p class="team-role">CEO</p>
-          <p class="team-bio">30+ years in telecom infrastructure. Former leadership roles at Ericsson, TeliaSonera, Millicom, and du/EITC. Deep expertise scaling shared infrastructure across emerging markets.</p>
-        </div>
-        <div class="team-card fade-in">
-          <a href="https://www.linkedin.com/in/molle/" target="_blank" rel="noopener" class="team-linkedin-link">
-            <img src="images/molle.jpg" alt="Mohamad Alubeid" class="team-photo">
-            <svg class="team-linkedin-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="#3B82F6"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </a>
-          <h3 class="team-name">Mohamad Alubeid</h3>
-          <p class="team-role">Commercial</p>
-          <p class="team-bio">Serial entrepreneur and fund manager with extensive EMEA experience. Drives commercial strategy, partnerships, and go-to-market across the portfolio.</p>
-        </div>
-        <div class="team-card fade-in">
-          <a href="https://www.linkedin.com/in/nbolanoss/" target="_blank" rel="noopener" class="team-linkedin-link">
-            <img src="images/nelson.jpg" alt="Nelson Bolanos" class="team-photo">
-            <svg class="team-linkedin-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="#3B82F6"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </a>
-          <h3 class="team-name">Nelson Bolanos</h3>
-          <p class="team-role">CTO</p>
-          <p class="team-bio">$8M exit. 4 years architecting and building the Allting platform. Leads all technical development, platform engineering, and infrastructure decisions.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Section Divider -->
-  <div class="section-divider"></div>
-
-  <!-- Roadmap -->
-  <section class="section section-dark" id="roadmap" aria-label="Roadmap">
-    <div class="container">
-      <div class="section-header fade-in">
-        <p class="section-label">Roadmap</p>
-        <h2 class="section-title">Path to Scale</h2>
-      </div>
-      <div class="roadmap-timeline">
-        <div class="roadmap-item fade-in">
-          <div class="roadmap-marker done"></div>
-          <div class="roadmap-content">
-            <span class="roadmap-badge done">Done</span>
-            <h3>Validation</h3>
-            <ul>
-              <li>41,500+ users on platform</li>
-              <li>5 products live</li>
-              <li>~$1M ARR achieved</li>
-            </ul>
-          </div>
-        </div>
-        <div class="roadmap-item fade-in">
-          <div class="roadmap-marker current"></div>
-          <div class="roadmap-content">
-            <span class="roadmap-badge current">Q4 2026</span>
-            <h3>Evidence</h3>
-            <ul>
-              <li>200,000+ users</li>
-              <li>20+ OpCos on platform</li>
-              <li>$3-5M ARR</li>
-            </ul>
-          </div>
-        </div>
-        <div class="roadmap-item fade-in">
-          <div class="roadmap-marker future"></div>
-          <div class="roadmap-content">
-            <span class="roadmap-badge future">2027</span>
-            <h3>Scale</h3>
-            <ul>
-              <li>500,000+ users</li>
-              <li>100+ OpCos</li>
-              <li>$10-20M ARR</li>
-            </ul>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -533,11 +269,9 @@
           <a href="mailto:info@excom.ai" class="footer-email">info@excom.ai</a>
         </div>
         <div class="footer-links">
-          <a href="#about">About</a>
-          <a href="#how-it-works">How It Works</a>
-          <a href="#market">Market</a>
-          <a href="#traction">Traction</a>
-          <a href="#team">Team</a>
+          <a href="/">Platform</a>
+          <a href="invest.html">Fund</a>
+          <a href="about.html">About</a>
         </div>
       </div>
       <div class="footer-bottom">
