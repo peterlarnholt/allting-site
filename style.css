@@ -1842,6 +1842,310 @@ ul { list-style: none; }
 }
 
 /* ============================================
+   FAQ Accordion
+   ============================================ */
+.faq-list {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.faq-item:first-child {
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--gray-200);
+  text-align: left;
+  transition: color var(--transition);
+}
+
+.faq-question:hover {
+  color: var(--white);
+}
+
+.faq-active .faq-question {
+  color: var(--blue);
+}
+
+.faq-icon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-left: 16px;
+}
+
+.faq-icon::before,
+.faq-icon::after {
+  content: '';
+  position: absolute;
+  background: var(--gray-400);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.faq-icon::before {
+  top: 50%;
+  left: 2px;
+  right: 2px;
+  height: 2px;
+  transform: translateY(-50%);
+}
+
+.faq-icon::after {
+  left: 50%;
+  top: 2px;
+  bottom: 2px;
+  width: 2px;
+  transform: translateX(-50%);
+}
+
+.faq-active .faq-icon::before,
+.faq-active .faq-icon::after {
+  background: var(--blue);
+}
+
+.faq-active .faq-icon::after {
+  transform: translateX(-50%) rotate(90deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0 0;
+}
+
+.faq-active .faq-answer {
+  max-height: 300px;
+  padding: 0 0 24px 0;
+}
+
+.faq-answer p {
+  font-size: 0.9375rem;
+  color: var(--gray-400);
+  line-height: 1.7;
+}
+
+/* ============================================
+   Opportunity Cards
+   ============================================ */
+.opportunity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.opportunity-card {
+  background: var(--navy-light);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.opportunity-card:hover {
+  border-color: rgba(59,130,246,0.2);
+  transform: translateY(-4px);
+}
+
+.opportunity-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.opportunity-desc {
+  font-size: 0.9375rem;
+  color: var(--gray-400);
+  line-height: 1.7;
+  margin-bottom: 32px;
+  flex: 1;
+}
+
+.opportunity-card .btn {
+  align-self: flex-start;
+}
+
+/* ============================================
+   Career Cards
+   ============================================ */
+.career-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.career-card {
+  background: var(--navy-light);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 40px 32px;
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.career-card:hover {
+  border-color: rgba(59,130,246,0.2);
+  transform: translateY(-4px);
+}
+
+.career-card-header {
+  margin-bottom: 20px;
+}
+
+.career-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.career-card-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.career-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: rgba(59,130,246,0.12);
+  color: var(--blue-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.career-card-desc {
+  font-size: 0.9375rem;
+  color: var(--gray-400);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.career-req-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.career-req-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.career-req-list li {
+  font-size: 0.9375rem;
+  color: var(--gray-400);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.career-req-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(59,130,246,0.4);
+}
+
+/* ============================================
+   Content Blocks (Democratisation, Thesis)
+   ============================================ */
+.content-block {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.content-heading {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+.content-text {
+  font-size: 1.0625rem;
+  color: var(--gray-300);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.content-text:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================
+   Offer Grid (Master Thesis)
+   ============================================ */
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.offer-item {
+  background: var(--navy-light);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 12px;
+  padding: 28px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.offer-item:hover {
+  border-color: rgba(59,130,246,0.2);
+  transform: translateY(-2px);
+}
+
+.offer-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(59,130,246,0.1);
+  border-radius: 10px;
+}
+
+.offer-item p {
+  font-size: 0.9375rem;
+  color: var(--gray-300);
+  line-height: 1.6;
+}
+
+/* ============================================
    Multi-page Responsive
    ============================================ */
 @media (max-width: 768px) {
@@ -1865,5 +2169,17 @@ ul { list-style: none; }
   .fund-terms-table td {
     font-size: 0.9375rem;
     padding: 16px 0;
+  }
+
+  .opportunity-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .career-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .offer-grid {
+    grid-template-columns: 1fr;
   }
 }

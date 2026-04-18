@@ -61,7 +61,7 @@
           <a href="#" class="nav-dropdown-trigger">Insights</a>
           <ul class="nav-dropdown-menu">
             <li><a href="news.html">News</a></li>
-            <li><a href="carrier.html">Carrier</a></li>
+            <li><a href="career.html">Career</a></li>
             <li><a href="master-thesis.html">Master Thesis</a></li>
           </ul>
         </li>
@@ -79,7 +79,96 @@
     <div class="container">
       <div class="hero-content">
         <h1 class="hero-title fade-in">Frequently Asked Questions</h1>
-        <p class="hero-subtitle fade-in">Coming Soon</p>
+        <p class="hero-subtitle fade-in">Everything you need to know about Allting</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  <section class="section" id="faq" aria-label="FAQ">
+    <div class="container">
+      <div class="faq-list">
+
+        <div class="faq-item fade-in">
+          <button class="faq-question" aria-expanded="false">
+            <span>What is Allting?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Allting is the shared infrastructure layer for AI in emerging markets. We provide everything an AI company needs to launch and scale — model access, API gateway, billing, security, compliance, and analytics — so they can focus on their product and customers.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in">
+          <button class="faq-question" aria-expanded="false">
+            <span>What is an OpCo?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>An Operating Company (OpCo) is an independent AI business that builds and sells products on the Allting platform. OpCos keep 85% of their revenue and benefit from shared infrastructure, reducing their time-to-market from months to hours.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in">
+          <button class="faq-question" aria-expanded="false">
+            <span>How does Allting make money?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>We take a 15% revenue share from every OpCo on the platform. As more OpCos join, our revenue grows with near-zero marginal infrastructure cost — creating operating leverage similar to tower companies in telecom.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in">
+          <button class="faq-question" aria-expanded="false">
+            <span>What markets does Allting serve?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>We focus on emerging markets — Latin America, MENA (Middle East & North Africa), Southeast Asia, and Sub-Saharan Africa. These regions represent 1.7 billion potential users with growing demand for AI but no infrastructure layer to serve them.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in">
+          <button class="faq-question" aria-expanded="false">
+            <span>What AI models does the platform support?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Allting provides access to all major AI models including OpenAI, Anthropic, Google, Meta (LLaMA), Mistral, and DeepSeek. Our intelligent routing optimizes for cost and performance across models.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in">
+          <button class="faq-question" aria-expanded="false">
+            <span>How is Allting different from AWS Bedrock or Azure AI?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Hyperscalers sell raw compute and model access to developers. Allting provides a complete operator platform — including billing, compliance, localization, and revenue sharing — designed specifically for companies building AI products in emerging markets.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in">
+          <button class="faq-question" aria-expanded="false">
+            <span>Who is behind Allting?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Allting is built by a team with 30+ years of telecom infrastructure experience (Ericsson, TeliaSonera, Millicom, du/EITC), combined with entrepreneurial and fund management expertise across EMEA.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in">
+          <button class="faq-question" aria-expanded="false">
+            <span>How can I build on the Allting platform?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Contact us at <a href="mailto:info@excom.ai" style="color: var(--blue);">info@excom.ai</a> to discuss becoming an OpCo on the platform.</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -108,5 +197,24 @@
   </footer>
 
   <script src="main.js" defer></script>
+  <script>
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = this.parentElement;
+        var isOpen = item.classList.contains('faq-active');
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(function(i) {
+          i.classList.remove('faq-active');
+          i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+        // Open clicked (if it wasn't already open)
+        if (!isOpen) {
+          item.classList.add('faq-active');
+          this.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
