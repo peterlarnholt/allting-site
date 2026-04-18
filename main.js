@@ -28,13 +28,43 @@
     document.body.style.overflow = links.classList.contains('open') ? 'hidden' : '';
   });
 
-  // Close menu when a link is clicked
+  // Close menu when a non-trigger link is clicked
   links.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
+      if (link.classList.contains('nav-dropdown-trigger')) return;
       toggle.classList.remove('active');
       links.classList.remove('open');
       document.body.style.overflow = '';
     });
+  });
+
+  // --- Dropdown navigation ---
+  const dropdownTriggers = document.querySelectorAll('.nav-dropdown-trigger');
+
+  dropdownTriggers.forEach(trigger => {
+    trigger.addEventListener('click', function (e) {
+      e.preventDefault();
+      const parent = this.parentElement;
+      const isMobileView = window.innerWidth <= 768;
+
+      if (isMobileView) {
+        // Accordion: toggle this dropdown, close others
+        dropdownTriggers.forEach(other => {
+          if (other !== trigger) {
+            other.parentElement.classList.remove('open');
+          }
+        });
+        parent.classList.toggle('open');
+      }
+    });
+  });
+
+  // Close dropdowns when clicking outside (desktop)
+  document.addEventListener('click', function (e) {
+    if (window.innerWidth > 768) return;
+    if (!e.target.closest('.nav-dropdown') && !e.target.closest('.nav-toggle')) {
+      document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
+    }
   });
 
   // --- Scroll-triggered fade-in animations ---
