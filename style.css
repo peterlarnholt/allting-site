@@ -143,6 +143,17 @@ ul { list-style: none; }
   transform: translateY(-1px);
 }
 
+.nav-cta-accent {
+  background: transparent;
+  border: 1px solid var(--blue);
+  color: var(--blue) !important;
+}
+
+.nav-cta-accent:hover {
+  background: var(--blue);
+  color: var(--white) !important;
+}
+
 /* --- Dropdown Navigation --- */
 .nav-dropdown {
   position: relative;
