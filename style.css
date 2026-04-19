@@ -462,6 +462,82 @@ ul { list-style: none; }
   background: var(--navy-mid);
 }
 
+.section-light {
+  background: #F8FAFC;
+}
+
+.section-light .section-label {
+  color: var(--blue);
+}
+
+.section-light .section-title {
+  color: #0F172A;
+}
+
+.section-light .section-desc {
+  color: #475569;
+}
+
+.section-light .about-quote {
+  color: #334155;
+}
+
+.section-light .about-quote strong {
+  color: #0F172A;
+}
+
+.section-light .about-card {
+  background: #FFFFFF;
+  border-color: #E2E8F0;
+}
+
+.section-light .about-card h3 {
+  color: #0F172A;
+}
+
+.section-light .about-card p {
+  color: #475569;
+}
+
+.section-light .opco-card {
+  background: #FFFFFF;
+  border-color: #E2E8F0;
+}
+
+.section-light .opco-name {
+  color: #0F172A;
+}
+
+.section-light .opco-desc {
+  color: #475569;
+}
+
+.section-light .opco-meta span {
+  color: #64748B;
+}
+
+.section-light .flow-layer {
+  background: #FFFFFF;
+  border-color: #E2E8F0;
+}
+
+.section-light .flow-layer-label {
+  color: #0F172A;
+}
+
+.section-light .flow-layer-desc {
+  color: #475569;
+}
+
+.section-light .flow-layer-infra {
+  background: var(--navy);
+}
+
+.section-light .flow-layer-infra .flow-layer-label,
+.section-light .flow-layer-infra .flow-layer-desc {
+  color: var(--white);
+}
+
 .section-header {
   text-align: center;
   max-width: 680px;
