@@ -352,20 +352,20 @@ ul { list-style: none; }
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 6vw, 4.25rem);
-  font-weight: 800;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 700;
   color: var(--white);
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-  margin-bottom: 24px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 32px;
 }
 
 .hero-subtitle {
-  font-size: clamp(1.1rem, 2vw, 1.35rem);
-  color: var(--gray-400);
-  font-weight: 400;
-  margin-bottom: 48px;
-  line-height: 1.5;
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  color: var(--gray-300);
+  font-weight: 300;
+  margin-bottom: 24px;
+  line-height: 1.6;
 }
 
 .hero-stats {
