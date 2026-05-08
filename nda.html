@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mutual Non-Disclosure Agreement | Allting</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #0F172A;
+  --bg-card: #1a2540;
+  --accent: #3B82F6;
+  --accent-light: #60A5FA;
+  --text: #F8FAFC;
+  --text-dim: #94A3B8;
+  --text-muted: #64748B;
+  --gradient-1: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.7;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 32px 100px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--accent);
+  margin-bottom: 12px;
+  display: block;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: var(--text-dim);
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 32px 0 12px;
+}
+
+p {
+  color: var(--text-dim);
+  font-size: 15px;
+  margin-bottom: 14px;
+}
+
+ol {
+  margin-left: 20px;
+  color: var(--text-dim);
+}
+
+ol li {
+  margin-bottom: 10px;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.party-box {
+  background: rgba(26, 37, 64, 0.6);
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin: 16px 0 32px;
+}
+
+.party-box .field {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 12px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.party-box .field-label {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.party-box .field-value {
+  color: var(--text);
+}
+
+.section-form {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  border-radius: 16px;
+  padding: 32px;
+  margin-top: 48px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.form-row.single {
+  grid-template-columns: 1fr;
+}
+
+label.field-name {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+input, textarea {
+  width: 100%;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 15px;
+  transition: border-color 0.2s;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.checkbox-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin: 16px 0;
+  padding: 16px;
+  background: rgba(15, 23, 42, 0.4);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.checkbox-row input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  flex-shrink: 0;
+  accent-color: var(--accent);
+}
+
+.checkbox-row label {
+  font-size: 14px;
+  color: var(--text-dim);
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+.signature-pad {
+  background: #FFFFFF;
+  border-radius: 8px;
+  margin: 12px 0;
+  position: relative;
+}
+
+#signatureCanvas {
+  display: block;
+  width: 100%;
+  height: 150px;
+  border-radius: 8px;
+  cursor: crosshair;
+}
+
+.signature-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.btn-clear {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.btn-submit {
+  width: 100%;
+  background: var(--gradient-1);
+  color: white;
+  border: none;
+  padding: 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 24px;
+  transition: all 0.3s;
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(59, 130, 246, 0.3);
+}
+
+.btn-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.success-message {
+  display: none;
+  text-align: center;
+  padding: 48px 32px;
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  border-radius: 16px;
+}
+
+.success-message.show {
+  display: block;
+}
+
+.success-icon {
+  font-size: 48px;
+  color: #22C55E;
+  margin-bottom: 16px;
+}
+
+.success-message h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+.dataroom-link {
+  display: inline-block;
+  margin-top: 20px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.dataroom-link:hover {
+  background: var(--accent-light);
+}
+
+.footer-note {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.footer-note a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .container { padding: 40px 20px 80px; }
+  h1 { font-size: 24px; }
+  .form-row { grid-template-columns: 1fr; }
+  .party-box .field { grid-template-columns: 1fr; gap: 4px; }
+  .party-box .field-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <span class="label">Confidential</span>
+    <h1>Mutual Non-Disclosure Agreement</h1>
+    <p class="subtitle">Required for access to the Allting investor data room</p>
+  </div>
+
+  <div id="ndaContent">
+
+    <h2>Parties</h2>
+    <div class="party-box">
+      <div class="field">
+        <span class="field-label">Disclosing Party</span>
+        <span class="field-value"><strong>EXCOM AI L.L.C-FZ</strong> ("Allting")</span>
+      </div>
+      <div class="field">
+        <span class="field-label">Address</span>
+        <span class="field-value">Meydan Grandstand, 6th floor, Meydan Road, Nad Al Sheba, Dubai, U.A.E.</span>
+      </div>
+      <div class="field">
+        <span class="field-label">License No.</span>
+        <span class="field-value">2418852.01</span>
+      </div>
+      <div class="field">
+        <span class="field-label">Free Zone</span>
+        <span class="field-value">Meydan Free Zone, Dubai</span>
+      </div>
+    </div>
+
+    <h2>Recitals</h2>
+    <p>The Parties wish to explore a potential business relationship and may exchange confidential information. This Agreement establishes the terms governing such disclosure.</p>
+
+    <h2>1. Confidential Information</h2>
+    <p>"Confidential Information" means all non-public information disclosed by either party (the "Disclosing Party") to the other (the "Receiving Party"), in any form, including but not limited to: business plans, financial information, customer data, technical specifications, software, source code, strategies, projections, the Allting investor materials, pitch deck, financial model, cap table, term sheets, and any other materials marked confidential or that a reasonable person would understand to be confidential.</p>
+
+    <h2>2. Obligations of Receiving Party</h2>
+    <p>The Receiving Party agrees to:</p>
+    <ol>
+      <li>Hold all Confidential Information in strict confidence and use the same degree of care as it uses to protect its own confidential information of similar importance, but in no event less than reasonable care;</li>
+      <li>Use Confidential Information solely for the purpose of evaluating a potential business relationship with the Disclosing Party;</li>
+      <li>Not disclose, copy, distribute, or transmit Confidential Information to any third party without the prior written consent of the Disclosing Party;</li>
+      <li>Limit access to Confidential Information to its employees, advisors, and representatives who have a need to know and who are bound by similar confidentiality obligations.</li>
+    </ol>
+
+    <h2>3. Exclusions</h2>
+    <p>Confidential Information does not include information that:</p>
+    <ol>
+      <li>Is or becomes publicly available through no fault of the Receiving Party;</li>
+      <li>Was already known to the Receiving Party prior to disclosure, as evidenced by written records;</li>
+      <li>Is rightfully received from a third party without breach of any obligation of confidentiality;</li>
+      <li>Is independently developed by the Receiving Party without use of or reference to Confidential Information;</li>
+      <li>Is required to be disclosed by law or court order, provided that the Receiving Party gives prompt notice to the Disclosing Party.</li>
+    </ol>
+
+    <h2>4. Term</h2>
+    <p>The obligations under this Agreement shall continue for a period of three (3) years from the Effective Date, unless terminated earlier by mutual written consent. The obligations of confidentiality with respect to trade secrets shall continue for as long as such information remains a trade secret under applicable law.</p>
+
+    <h2>5. No Obligation</h2>
+    <p>Nothing in this Agreement shall obligate either party to enter into any further business relationship or transaction. This Agreement does not constitute an offer, agreement, or commitment to invest, partner, or contract.</p>
+
+    <h2>6. No License</h2>
+    <p>No license, express or implied, to any intellectual property is granted by this Agreement. All Confidential Information remains the property of the Disclosing Party.</p>
+
+    <h2>7. Return of Materials</h2>
+    <p>Upon written request of the Disclosing Party, the Receiving Party shall promptly return or destroy all Confidential Information in its possession, including all copies and derivatives, and certify such return or destruction in writing.</p>
+
+    <h2>8. Remedies</h2>
+    <p>The Parties acknowledge that monetary damages may be inadequate to remedy a breach of this Agreement, and that the Disclosing Party shall be entitled to seek injunctive relief in addition to any other remedies available at law or in equity.</p>
+
+    <h2>9. Governing Law</h2>
+    <p>This Agreement shall be governed by and construed in accordance with the laws of the Dubai International Financial Centre (DIFC), and any disputes shall be subject to the exclusive jurisdiction of the DIFC Courts.</p>
+
+    <h2>10. Entire Agreement</h2>
+    <p>This Agreement constitutes the entire understanding between the Parties with respect to the subject matter herein and supersedes all prior or contemporaneous communications.</p>
+
+    <div class="section-form">
+      <h2 style="margin-top:0">Receiving Party Information</h2>
+      <p style="margin-bottom: 24px;">Please complete the form below to electronically sign and access the data room.</p>
+
+      <form id="ndaForm">
+        <div class="form-row">
+          <div>
+            <label class="field-name" for="fullName">Full Name</label>
+            <input type="text" id="fullName" required>
+          </div>
+          <div>
+            <label class="field-name" for="title">Title</label>
+            <input type="text" id="title" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div>
+            <label class="field-name" for="company">Company / Entity</label>
+            <input type="text" id="company" required>
+          </div>
+          <div>
+            <label class="field-name" for="email">Email Address</label>
+            <input type="email" id="email" required>
+          </div>
+        </div>
+
+        <div class="form-row single">
+          <div>
+            <label class="field-name" for="address">Address</label>
+            <input type="text" id="address" required>
+          </div>
+        </div>
+
+        <div class="form-row single">
+          <div>
+            <label class="field-name" for="purpose">Purpose of Review</label>
+            <input type="text" id="purpose" placeholder="e.g. Investment evaluation, partnership discussion" required>
+          </div>
+        </div>
+
+        <div class="checkbox-row">
+          <input type="checkbox" id="agree1" required>
+          <label for="agree1">I have read and agree to the terms of this Mutual Non-Disclosure Agreement.</label>
+        </div>
+
+        <div class="checkbox-row">
+          <input type="checkbox" id="agree2" required>
+          <label for="agree2">I confirm I have authority to bind the Company / Entity named above to the terms of this Agreement.</label>
+        </div>
+
+        <div>
+          <label class="field-name">Electronic Signature</label>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">Sign in the box below using your mouse or touch screen.</p>
+          <div class="signature-pad">
+            <canvas id="signatureCanvas"></canvas>
+          </div>
+          <div class="signature-controls">
+            <button type="button" class="btn-clear" id="clearSig">Clear</button>
+            <span style="font-size: 12px; color: var(--text-muted);" id="dateLabel"></span>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit" id="submitBtn">Sign & Access Data Room</button>
+      </form>
+    </div>
+
+    <div class="footer-note">
+      Questions? Contact <a href="mailto:info@allting.ai">info@allting.ai</a><br>
+      © EXCOM AI L.L.C-FZ — Confidential
+    </div>
+
+  </div>
+
+  <div class="success-message" id="successMessage">
+    <div class="success-icon">✓</div>
+    <h3>NDA Successfully Signed</h3>
+    <p>Thank you. A copy of your signed NDA has been recorded. You now have access to the Allting investor data room.</p>
+    <a href="#" class="dataroom-link" id="dataRoomLink">Enter Data Room →</a>
+    <p style="margin-top: 24px; font-size: 13px; color: var(--text-muted);">A confirmation email will be sent to the address you provided.</p>
+  </div>
+
+</div>
+
+<script>
+// Set today's date
+const today = new Date();
+const dateStr = today.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+document.getElementById('dateLabel').textContent = 'Date: ' + dateStr;
+
+// Signature pad
+const canvas = document.getElementById('signatureCanvas');
+const ctx = canvas.getContext('2d');
+
+function resizeCanvas() {
+  const rect = canvas.getBoundingClientRect();
+  const dpr = window.devicePixelRatio || 1;
+  canvas.width = rect.width * dpr;
+  canvas.height = 150 * dpr;
+  ctx.scale(dpr, dpr);
+  ctx.lineWidth = 2;
+  ctx.lineCap = 'round';
+  ctx.strokeStyle = '#0F172A';
+}
+resizeCanvas();
+
+let drawing = false;
+let hasSignature = false;
+
+function getPos(e) {
+  const rect = canvas.getBoundingClientRect();
+  if (e.touches) {
+    return { x: e.touches[0].clientX - rect.left, y: e.touches[0].clientY - rect.top };
+  }
+  return { x: e.clientX - rect.left, y: e.clientY - rect.top };
+}
+
+function start(e) {
+  drawing = true;
+  hasSignature = true;
+  const pos = getPos(e);
+  ctx.beginPath();
+  ctx.moveTo(pos.x, pos.y);
+  e.preventDefault();
+}
+
+function draw(e) {
+  if (!drawing) return;
+  const pos = getPos(e);
+  ctx.lineTo(pos.x, pos.y);
+  ctx.stroke();
+  e.preventDefault();
+}
+
+function stop() { drawing = false; }
+
+canvas.addEventListener('mousedown', start);
+canvas.addEventListener('mousemove', draw);
+canvas.addEventListener('mouseup', stop);
+canvas.addEventListener('mouseleave', stop);
+canvas.addEventListener('touchstart', start);
+canvas.addEventListener('touchmove', draw);
+canvas.addEventListener('touchend', stop);
+
+document.getElementById('clearSig').addEventListener('click', () => {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  hasSignature = false;
+});
+
+window.addEventListener('resize', () => {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  hasSignature = false;
+  resizeCanvas();
+});
+
+// Form submission
+document.getElementById('ndaForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  if (!hasSignature) {
+    alert('Please provide your signature.');
+    return;
+  }
+
+  const submitBtn = document.getElementById('submitBtn');
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Processing...';
+
+  // Capture data
+  const data = {
+    fullName: document.getElementById('fullName').value,
+    title: document.getElementById('title').value,
+    company: document.getElementById('company').value,
+    email: document.getElementById('email').value,
+    address: document.getElementById('address').value,
+    purpose: document.getElementById('purpose').value,
+    signature: canvas.toDataURL('image/png'),
+    date: today.toISOString(),
+    userAgent: navigator.userAgent,
+    ipNote: 'IP captured server-side on submission'
+  };
+
+  // For now, store locally and show success.
+  // In production: POST to backend endpoint that emails the signed NDA + grants data room access.
+  try {
+    localStorage.setItem('allting_nda_' + Date.now(), JSON.stringify(data));
+  } catch (err) {}
+
+  // Simulate brief processing
+  await new Promise(r => setTimeout(r, 800));
+
+  document.getElementById('ndaContent').style.display = 'none';
+  document.getElementById('successMessage').classList.add('show');
+
+  // Replace with real data room link once built
+  document.getElementById('dataRoomLink').href = 'dataroom.html';
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+
+</body>
+</html>
