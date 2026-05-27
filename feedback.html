@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Allting — Prospectus for Professional Feedback</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #0F172A;
+  --bg-card: #1a2540;
+  --bg-soft: #162037;
+  --accent: #3B82F6;
+  --accent-light: #60A5FA;
+  --text: #F8FAFC;
+  --text-dim: #94A3B8;
+  --text-muted: #64748B;
+  --green: #22C55E;
+  --amber: #F59E0B;
+  --red: #EF4444;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.7;
+}
+
+.container {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 60px 32px 100px;
+}
+
+/* Cover */
+.cover {
+  text-align: center;
+  margin-bottom: 64px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--accent);
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+h1 {
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+  line-height: 1.15;
+}
+
+.subtitle {
+  font-size: 17px;
+  color: var(--text-dim);
+  margin-bottom: 24px;
+}
+
+.meta {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* Cover note */
+.cover-note {
+  background: rgba(59, 130, 246, 0.06);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 12px;
+  padding: 28px 32px;
+  margin-bottom: 64px;
+}
+
+.cover-note .from {
+  font-size: 12px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.cover-note p {
+  color: var(--text);
+  font-size: 15.5px;
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+
+.cover-note p:last-child { margin-bottom: 0; }
+
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 64px 0 12px;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+h2 + .section-lede {
+  font-size: 15px;
+  color: var(--text-dim);
+  margin-bottom: 24px;
+}
+
+h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 28px 0 10px;
+}
+
+p {
+  color: var(--text-dim);
+  font-size: 15px;
+  margin-bottom: 14px;
+}
+
+strong { color: var(--text); }
+em { color: var(--accent-light); font-style: normal; }
+
+ul { margin: 10px 0 16px 22px; color: var(--text-dim); }
+ul li { font-size: 15px; line-height: 1.7; margin-bottom: 6px; }
+
+/* Card grid */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 20px 22px;
+}
+
+.card-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.card-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.card-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0 20px;
+  font-size: 14px;
+}
+
+th {
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: rgba(0,0,0,0.15);
+}
+
+td {
+  font-size: 14px;
+  color: var(--text-dim);
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  line-height: 1.55;
+}
+
+td:first-child { color: var(--text); font-weight: 500; }
+
+/* Risk box */
+.risk-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.risk {
+  background: var(--bg-card);
+  border-left: 3px solid var(--amber);
+  border-radius: 8px;
+  padding: 18px 22px;
+}
+
+.risk.high { border-left-color: var(--red); }
+.risk.low { border-left-color: var(--green); }
+
+.risk-title {
+  font-weight: 700;
+  color: var(--text);
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.risk-desc {
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* Feedback asks */
+.asks {
+  background: rgba(34, 197, 94, 0.06);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  border-radius: 12px;
+  padding: 28px 32px;
+  margin-top: 48px;
+}
+
+.asks h2 {
+  margin-top: 0;
+  color: #86EFAC;
+}
+
+.asks ol {
+  margin: 16px 0 0 22px;
+  color: var(--text);
+}
+
+.asks ol li {
+  margin-bottom: 14px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+/* Footer */
+.footer-note {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.7;
+}
+
+.footer-note a { color: var(--accent); text-decoration: none; }
+
+@media (max-width: 600px) {
+  .container { padding: 40px 20px 80px; }
+  h1 { font-size: 28px; }
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  td, th { padding: 10px 10px; font-size: 13px; }
+}
+
+@media print {
+  body { background: white; color: #0F172A; }
+  .container { padding: 20px; }
+  p, td { color: #334155; }
+  h1, h2, h3, strong, td:first-child { color: #0F172A; }
+  .card, .cover-note, .asks { background: #F8FAFC; }
+  th { color: #334155; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Cover -->
+  <div class="cover">
+    <span class="label">Confidential — For Professional Review</span>
+    <h1>Allting — Concept Prospectus</h1>
+    <p class="subtitle">Software platform for AI operators in emerging markets, with infrastructure-grade economics</p>
+    <p class="meta">Prepared by EXCOM AI L.L.C-FZ &nbsp;·&nbsp; Dubai, UAE</p>
+  </div>
+
+  <!-- Cover note to Jonas -->
+  <div class="cover-note">
+    <div class="from">A note before reading</div>
+    <p><strong>Jonas — this is not a pitch.</strong> We're a few months out from a formal Series A and would value your professional perspective on the underlying case before we go to market.</p>
+    <p>Given your DCM background and Neptune's exposure to a wide range of growth-stage situations, your honest read on what's <em>doable, legit and reasonable</em> would help us a great deal. Specific feedback questions at the end of the document.</p>
+    <p>Materials are deliberately framed in ranges and directional terms — actual financials and cap table will be shared only under an executed NDA at a later stage.</p>
+  </div>
+
+  <!-- Executive Summary -->
+  <h2>1. Executive Summary</h2>
+  <p>Allting is being formed as a standalone entity in Meydan Free Zone, Dubai, to operate a <strong>shared software platform that enables AI operating companies (OpCos) to launch and scale in emerging markets</strong>. The platform is already running in production under the founding team's existing ExCom AI L.L.C-FZ entity and will be migrated/contributed into Allting upon incorporation.</p>
+  <p>The platform earns a recurring revenue share from every OpCo on it. The thesis is that AI infrastructure, like telecom infrastructure before it, is in the early stage of de-layering — and that the operator/platform split that produced companies like Stripe, Adyen, and American Tower in adjacent industries is the most defensible position in the AI value chain for emerging markets.</p>
+
+  <!-- Snapshot -->
+  <h2>2. Snapshot</h2>
+  <div class="grid-3">
+    <div class="card">
+      <div class="card-label">Users on platform</div>
+      <div class="card-value">~40,000+</div>
+      <div class="card-desc">Across initial OpCos, +5 years of operation</div>
+    </div>
+    <div class="card">
+      <div class="card-label">OpCos live</div>
+      <div class="card-value">4</div>
+      <div class="card-desc">3 internal (platform validation) + 1 independent operator</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Revenue</div>
+      <div class="card-value">Break-even</div>
+      <div class="card-desc">At current scale, before equity capital</div>
+    </div>
+  </div>
+  <div class="grid-3">
+    <div class="card">
+      <div class="card-label">Pipeline OpCos</div>
+      <div class="card-value">Several</div>
+      <div class="card-desc">BioTech, E-commerce, Finance, Compliance, Marketplace</div>
+    </div>
+    <div class="card">
+      <div class="card-label">Onboarding time</div>
+      <div class="card-value">~1 week</div>
+      <div class="card-desc">Standard new OpCo integration</div>
+    </div>
+    <div class="card">
+      <div class="card-label">AI models live</div>
+      <div class="card-value">Local + Public</div>
+      <div class="card-desc">Self-hosted open-source and major commercial APIs</div>
+    </div>
+  </div>
+
+  <!-- Business model -->
+  <h2>3. Business Model & Unit Economics</h2>
+  <p class="section-lede">Software platform with infrastructure-grade economics.</p>
+
+  <h3>Revenue model</h3>
+  <p>Allting earns a recurring share of every OpCo's revenue (guidance range <strong>~12–15%</strong>, expected to compress to ~10–12% in negotiated enterprise deals). The platform absorbs token costs (the variable COGS) and passes finished services to OpCos through a single API gateway, a managed billing/security/compliance layer, and a tenant-isolated runtime.</p>
+
+  <h3>Margin profile (target at scale)</h3>
+  <table>
+    <thead><tr><th>Metric</th><th>Range</th><th>Comparable</th></tr></thead>
+    <tbody>
+      <tr><td>Gross margin (after tokens)</td><td>~90%</td><td>Stripe ~80%, Adyen ~80%</td></tr>
+      <tr><td>EBITDA margin (at scale)</td><td>60%+</td><td>American Tower ~63% EBITDA</td></tr>
+      <tr><td>Marginal cost per new OpCo</td><td>Near zero (infra)</td><td>Onboarding/support scale linearly</td></tr>
+      <tr><td>Realised take rate</td><td>~10–12%</td><td>BaaS market reference</td></tr>
+    </tbody>
+  </table>
+  <p>The clean read: <strong>software margin profile, infrastructure-style operating leverage.</strong> No tangible assets, low capex, recurring revenue, multi-tenant. Valuation reference set is SaaS/payment platform multiples, not tower-company multiples — that distinction materially changes the financing case.</p>
+
+  <!-- Market -->
+  <h2>4. Market Context</h2>
+  <p>Three structural shifts that we believe make this thesis credible over a 5–10 year horizon, not a cyclical bet:</p>
+  <ul>
+    <li><strong>AI inference cost has fallen ~200–300x</strong> from GPT-4 launch (March 2023) to mid-2026 (TokenCost, DeepLearning.ai). This crosses the viability threshold for emerging-market price points.</li>
+    <li><strong>Open-source has reached production parity.</strong> Meta's Llama ecosystem alone exceeds 1.2B cumulative downloads (Meta, 2026). On-premises and self-hosted now controls a majority share of the deployed LLM market in enterprise.</li>
+    <li><strong>Adoption growth is highest where AI is scarcest.</strong> Microsoft's AI Diffusion Report 2025 finds ChatGPT adoption growth in low-income countries is ~4x higher than in high-income countries. The 10.6pp North–South adoption gap is widening, not narrowing.</li>
+  </ul>
+  <p>Demand is proven and growing. The bottleneck is operator-grade infrastructure to serve it at viable price points — which is the gap Allting fills.</p>
+
+  <h3>Market sizing (directional)</h3>
+  <table>
+    <thead><tr><th></th><th>Scope</th><th>Estimate</th></tr></thead>
+    <tbody>
+      <tr><td>TAM</td><td>AI infrastructure spend across LatAm, MENA, SEA, SSA (5 yr)</td><td>$10–15B+ annual</td></tr>
+      <tr><td>SAM</td><td>LatAm + MENA (initial focus regions)</td><td>$5–8B annual</td></tr>
+      <tr><td>SOM</td><td>50–100+ OpCos by year 3–5</td><td>$10–30M ARR</td></tr>
+    </tbody>
+  </table>
+
+  <!-- Capital plan -->
+  <h2>5. Capital Plan</h2>
+  <p class="section-lede">Phased approach. Equity first, then institutional fund vehicle.</p>
+
+  <table>
+    <thead><tr><th>Phase</th><th>Timing</th><th>Vehicle</th><th>Size</th><th>Purpose</th></tr></thead>
+    <tbody>
+      <tr><td>Phase 1 — Series A</td><td>Q4 2026 – Q1 2027</td><td>Preferred equity in Allting (new entity, Meydan)</td><td>~$15M</td><td>Platform scaling, OpCo onboarding, regional expansion (LatAm → MENA)</td></tr>
+      <tr><td>Phase 2 — Institutional</td><td>2028 (post-milestones)</td><td>To be determined (likely PE fund or hybrid)</td><td>$100–150M</td><td>Scale to 100+ OpCos. Possible debt sleeve to extend runway and reduce dilution.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Series A use of funds (indicative)</h3>
+  <ul>
+    <li>Platform engineering & infrastructure scaling — ~35%</li>
+    <li>Sales & BD (OpCo acquisition pipeline) — ~25%</li>
+    <li>Regional expansion (LatAm → MENA) — ~20%</li>
+    <li>Operations & working capital — ~15%</li>
+    <li>Legal, compliance, contingency — ~5%</li>
+  </ul>
+
+  <!-- Team -->
+  <h2>6. Team</h2>
+  <table>
+    <thead><tr><th>Name</th><th>Role</th><th>Background</th></tr></thead>
+    <tbody>
+      <tr><td>Peter Larnholt</td><td>CEO</td><td>30+ years telecom infrastructure. Former CIO at du/EITC (UAE), senior leadership at Millicom (LatAm/Africa), TeliaSonera, Ericsson. Deep operator and emerging-market scaling experience.</td></tr>
+      <tr><td>Mohamad Alubeid</td><td>Commercial</td><td>Serial entrepreneur and fund manager. EMEA GTM and ecosystem builder. Drives commercial strategy and investor relations.</td></tr>
+      <tr><td>Nelson Bolanos</td><td>CTO</td><td>$8M exit (Hightech). Cloud & DevOps specialist. 4+ years building the Allting platform from scratch.</td></tr>
+    </tbody>
+  </table>
+
+  <!-- Risk factors -->
+  <h2>7. Self-Assessment of Risks</h2>
+  <p class="section-lede">Honest reading of what could go wrong, and how we think about it.</p>
+
+  <div class="risk-grid">
+    <div class="risk high">
+      <div class="risk-title">Corporate status — entity not yet formed</div>
+      <p class="risk-desc">Allting itself is not yet incorporated. The platform currently operates under ExCom AI L.L.C-FZ. Series A close requires incorporation in Meydan Free Zone, definition of the cap table among the founding team, and migration/contribution of platform IP. This is a known and time-boxed workstream — not a structural risk — but it must be completed before any close.</p>
+    </div>
+    <div class="risk">
+      <div class="risk-title">Take rate compression</div>
+      <p class="risk-desc">Guidance is 12–15% revenue share. Enterprise OpCos will negotiate. Realistic realised rate is likely 10–12% at scale, modelled accordingly.</p>
+    </div>
+    <div class="risk">
+      <div class="risk-title">Onboarding cost is not zero</div>
+      <p class="risk-desc">"Near-zero marginal cost per new OpCo" is true for infrastructure (multi-tenant compute, shared services). Onboarding, integration support, and account management scale linearly — not exponentially. This is reflected in the cost model.</p>
+    </div>
+    <div class="risk">
+      <div class="risk-title">Hyperscaler / gateway competition</div>
+      <p class="risk-desc">AWS Bedrock, Azure AI Foundry, Google Vertex AI compete on raw model access. OpenRouter ($500M valuation, $100M+ ARR) competes on developer-facing routing. None operate the operator/revenue-share model in emerging markets. Allting's moat is ecosystem, distribution and regional operating expertise — not the gateway itself.</p>
+    </div>
+    <div class="risk">
+      <div class="risk-title">OpCo concentration today</div>
+      <p class="risk-desc">A meaningful share of current user volume comes from one consumer OpCo (Sport vertical). Phase 1 mitigates this through diversified pipeline: five external operators (BioTech, E-commerce, Finance, Compliance, Marketplace) in onboarding.</p>
+    </div>
+    <div class="risk">
+      <div class="risk-title">Regulatory exposure across emerging markets</div>
+      <p class="risk-desc">Operating across LatAm and MENA exposes the platform to evolving AI regulation. The platform is GDPR-compliant today. SOC 2 and regional certifications are on the Phase 1 roadmap.</p>
+    </div>
+    <div class="risk low">
+      <div class="risk-title">No debt, no SAFEs, no convertibles</div>
+      <p class="risk-desc">Clean cap table. Once formed, the entity starts free of any prior instruments. New investors are pricing entry, not legacy structure.</p>
+    </div>
+  </div>
+
+  <!-- Partners -->
+  <h2>8. Partners & Advisors</h2>
+  <table>
+    <thead><tr><th>Partner</th><th>Role</th></tr></thead>
+    <tbody>
+      <tr><td>CQT Invest</td><td>Investment partner</td></tr>
+      <tr><td>Waystone</td><td>Fund operations (engagement in discussion)</td></tr>
+      <tr><td>Microsoft</td><td>Technology partner</td></tr>
+    </tbody>
+  </table>
+
+  <!-- Feedback asks -->
+  <div class="asks">
+    <h2>9. Specific Feedback Requested</h2>
+    <p style="color: var(--text-dim); margin-bottom: 8px;">Honest answers more useful than diplomatic ones.</p>
+    <ol>
+      <li><strong>Is the framing credible?</strong> Software platform with infrastructure-grade economics. Stripe / Adyen as comparables. Does this hold up to scrutiny, or does the comparison invite challenge?</li>
+      <li><strong>Is the margin profile believable?</strong> ~90% gross / 60%+ EBITDA at scale, with realised take rate ~10–12%. Anything off?</li>
+      <li><strong>Is the capital plan reasonable?</strong> $15M Series A in Q4 2026 / Q1 2027, followed by a $100–150M institutional raise in 2028 contingent on milestone delivery. Is this credible for a first-time entity, or does the phasing feel off?</li>
+      <li><strong>What would a Nordic LP push back on hardest?</strong> If we walked into a debt-fund or growth-equity committee in Sweden or Germany with this, what's the first three objections raised?</li>
+      <li><strong>What's missing from this document?</strong> What data, structure or framing would a sophisticated finance reader want to see before being able to form a view?</li>
+      <li><strong>Is the risk self-assessment honest, or do we look naive?</strong> What risks have we under-weighted?</li>
+    </ol>
+  </div>
+
+  <div class="footer-note">
+    Confidential — prepared exclusively for professional review by Jonas Olsson (Neptune Partners). Not an offer to sell or solicit investment. No reliance should be placed on this document for any investment decision. Numbers are indicative ranges and not warranties.<br>
+    EXCOM AI L.L.C-FZ &nbsp;·&nbsp; <a href="mailto:info@allting.ai">info@allting.ai</a> &nbsp;·&nbsp; <a href="https://allting.ai">allting.ai</a>
+  </div>
+
+</div>
+
+</body>
+</html>
