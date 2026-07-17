@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Allting — Shaires / NOIA Signal</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #0F172A;
+  --bg-card: #1a2540;
+  --accent: #3B82F6;
+  --accent-light: #60A5FA;
+  --text: #F8FAFC;
+  --text-dim: #94A3B8;
+  --text-muted: #64748B;
+  --green: #22C55E;
+  --amber: #F59E0B;
+}
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+.page {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 48px 32px 60px;
+}
+
+.header {
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding-bottom: 20px;
+  margin-bottom: 32px;
+}
+
+.label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+h1 {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--text-dim);
+}
+
+h2 {
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--accent);
+  margin: 28px 0 12px;
+}
+
+h2:first-of-type { margin-top: 0; }
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+  padding: 18px 20px;
+}
+
+.card-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.card-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 13px;
+  color: var(--text-dim);
+  line-height: 1.55;
+}
+
+.card strong { color: var(--text); }
+
+.takeaways {
+  background: rgba(59,130,246,0.06);
+  border: 1px solid rgba(59,130,246,0.2);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-top: 8px;
+}
+
+.takeaways ol {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--text);
+}
+
+.takeaways li {
+  font-size: 14px;
+  line-height: 1.65;
+  margin-bottom: 10px;
+  color: var(--text-dim);
+}
+
+.takeaways li:last-child { margin-bottom: 0; }
+
+.takeaways strong { color: var(--text); }
+
+.actions {
+  background: rgba(34,197,94,0.06);
+  border: 1px solid rgba(34,197,94,0.2);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-top: 8px;
+}
+
+.actions ol {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--text);
+}
+
+.actions li {
+  font-size: 14px;
+  line-height: 1.65;
+  margin-bottom: 8px;
+}
+
+.actions li:last-child { margin-bottom: 0; }
+
+.hot {
+  color: #FCA5A5;
+  font-weight: 700;
+}
+
+.footer {
+  margin-top: 36px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  font-size: 11px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+@media print {
+  body { background: white; color: #0F172A; }
+  .page { padding: 20px; }
+  .card, .takeaways, .actions { background: #F8FAFC; border-color: #E2E8F0; }
+  p, li { color: #334155; }
+  h1, h2, strong, .card strong { color: #0F172A; }
+  .card-title { color: #0F172A; }
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="header">
+    <div class="label">Investor Intelligence · Confidential</div>
+    <h1>Shaires / NOIA Signal</h1>
+    <p class="subtitle">Why this matters to Allting's Series A — 1-pager brief</p>
+  </div>
+
+  <h2>What just happened</h2>
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">Shaires Holdings (AIM: SHR)</div>
+      <div class="card-sub">First-of-kind listed AI vehicle</div>
+      <p>Publicly listed permanent-capital vehicle giving investors exposure to <strong>10–15 late-stage / pre-IPO AI companies</strong> (65% builders, 35% beneficiaries). BVI-incorporated, London AIM. <strong>0% mgmt fee, 0% carry.</strong> Led by tech heavyweights Suhail Rizvi (Rizvi Traverse) and Shervin Pishevar. Currently running a hot institutional raise — demand due 6pm Dubai, Fri 17 July.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">NOIA Capital</div>
+      <div class="card-sub">Luxembourg + DIFC family office</div>
+      <p>Multi-family office deploying growth capital into tech. Regulated by CSSF (LU), FSMA (BE), <strong>DFSA (UAE — DIFC)</strong>, VARA. Just took <strong>~19% of Shaires</strong> — signalling active demand for AI private-market exposure. Recently led $12M into blockchain gaming co Ultra.</p>
+    </div>
+  </div>
+
+  <h2>Why it matters to Allting</h2>
+  <div class="takeaways">
+    <ol>
+      <li><strong>NOIA is a qualified Series A lead.</strong> DIFC-regulated, tech-focused, growth capital, actively deploying into AI. Same regulatory backyard as Allting. <span class="hot">Warm intro should be a priority.</span></li>
+      <li><strong>The market window is open now.</strong> A first-of-kind AIM offering with retail excluded and a 4-day close signals aggressive buy-side appetite for AI exposure.</li>
+      <li><strong>Allting's differentiation writes itself.</strong> Shaires = passive index of AI companies. Allting = the infrastructure those companies run on. Software margins (~90% gross), recurring 12–15% take rate, emerging-market operator model. Different, higher-margin, harder to replicate.</li>
+      <li><strong>Rizvi + Pishevar attaching validates the category.</strong> When top-tier tech capital backs AI-exposure vehicles, adjacent AI infrastructure plays get pulled into the same attention window.</li>
+      <li><strong>Shaires structure = Phase 2 option.</strong> A listed permanent-capital vehicle on AIM (or Nordic First North) is a real alternative to a closed-end PE fund for the 2028 $100M+ raise.</li>
+    </ol>
+  </div>
+
+  <h2>Recommended actions</h2>
+  <div class="actions">
+    <ol>
+      <li>Add <strong>NOIA Capital</strong> to Series A target list, priority: HOT</li>
+      <li>Molle to explore warm intro to NOIA (Charlie Ejerholm? DIFC network?)</li>
+      <li>Add Shaires as competitive-comparison slide in deck v2</li>
+      <li>Track outcome of Shaires' July raise as market-timing signal</li>
+      <li>Add "listed vehicle (AIM / First North)" to Phase 2 options for Waystone discussion</li>
+    </ol>
+  </div>
+
+  <div class="footer">
+    Prepared 2026-07-17 · EXCOM AI L.L.C-FZ · <a href="mailto:info@allting.ai" style="color: var(--accent); text-decoration: none;">info@allting.ai</a>
+  </div>
+
+</div>
+
+</body>
+</html>
